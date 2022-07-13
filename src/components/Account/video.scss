@@ -1,0 +1,125 @@
+.account-video {
+  width: 100%;
+  padding: 50px 0;
+
+  hr:not([size]) {
+    color: #999;
+    margin: 3rem 0;
+  }
+  h3 {
+    color: #999;
+    strong {
+      color: #fff;
+    }
+  }
+  .big-video {
+    margin-top: 3rem;
+  }
+  video {
+    width: 100%;
+    max-width: 100%;
+    max-height: 749px;
+    position: relative;
+  }
+
+  .video-wrapper {
+    position: relative;
+    transition: 0.6s;
+
+    .video-action {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: 0.5s;
+
+      .player-icon {
+        color: #fff;
+      }
+      .fa-play-circle, .fa-pause-circle {
+        font-size: 60px;
+      }
+    }
+
+    &:hover .video-action {
+      // display: flex;
+    }
+  }
+  .video-info {
+    margin: 1.5rem 0 0;
+    h3 {
+      color: #fff;
+    }
+  }
+  .video-carousel {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    .small-video {
+      cursor: pointer;
+      display: inline-block;
+      transition: 0.5s;
+
+      &:hover {
+        opacity: 0.4;
+      }
+      img {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: 16px;
+      }
+      @media(max-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+          width: 48%;
+        }
+        .small-video-info {
+          width: 48%;
+        }
+      }
+      @media(max-width: 520px) {
+        display: block;
+
+        img {
+          width: 100%;
+        }
+        .small-video-info {
+          width: 100%;
+        }
+      }
+    }
+    @media(max-width: 768px) {
+      display: inline-block;
+    }
+  }
+}
+.video-action {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: 0.5s;
+
+  .player-icon {
+    color: #fff;
+  }
+  .fa-play-circle, .fa-pause-circle {
+    font-size: 60px;
+  }
+}

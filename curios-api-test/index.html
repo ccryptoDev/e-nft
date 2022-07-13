@@ -1,0 +1,119 @@
+<html>
+<head>
+	<title>Curios Api</title>
+<!--- jquery --->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!--- Api --->
+<script src="./utils.js"></script>
+
+<!--- encryption libraries --->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/hmac-sha256.min.js"></script>
+
+<style>
+	.responseData{
+		max-height: 100px;
+		overflow: auto;
+	}
+</style>
+</head>
+<body>
+
+<div>
+<H2>Login Response:</H2>
+<p id="loginResonse" class="responseData"></p>
+<H2>Verify Login Response:</H2>
+<p id="verifyLoginResonse" class="responseData"></p>
+<H2>Token List Response:</H2>
+<p id="tokenListResonse" class="responseData"></p>
+<H2>Token Response:</H2>
+<p id="tokenResonse" class="responseData"></p>
+</div>
+
+
+<!--- code --->
+<script>
+	const user_email = "support+apptest@curios.com";
+	const user_password = "8ahs6HSd5!";
+	const user_verify_otp= "019288";
+	$(document).ready(function(){
+		localStorage.clear();
+		userLogin();
+	});
+	
+function showLoader(object){
+	object.html('<img src="./loader.gif" width="50"/>');
+}
+
+function userLogin(){
+	showLoader($("#loginResonse"));
+	loginRequest(user_email, user_password).then(function (data) {
+				console.log("Login ==>>>"+data);
+				$("#loginResonse").text(data);
+                let response = JSON.parse(data);
+                if (response !== null && response.SUCCESS === true) {
+                    localStorage.setItem("VERIFICATION_TYPE", response.DATA.VERIFICATION_TYPE);
+                    localStorage.setItem("VERIFICATION_TOKEN", response.DATA.VERIFICATION_TOKEN);
+				    localStorage.setItem("userId", user_email);
+				 } else {
+                    $("#error").html(response.MESSAGE);
+                    console.error("Error", response);
+                }
+				userVerify();
+            });
+}
+
+function userVerify(){
+	showLoader($("#verifyLoginResonse"));
+	let verificationToken = localStorage.getItem("VERIFICATION_TOKEN");
+	loginVerifyRequest(user_email,user_verify_otp,verificationToken).then(function(data) {
+				console.log("Verify Login ==>>>"+data);
+				$("#verifyLoginResonse").text(data);
+                let verificationToken = localStorage.getItem("VERIFICATION_TOKEN");
+                let response = JSON.parse(data);
+                if (response !== null && response.SUCCESS === true) {
+                    localStorage.setItem("SESSION_TOKEN", "Bearer "+response.DATA.session_token);
+                    localStorage.setItem("DECRYPTION_IV", response.DATA.decryption_iv);
+                    localStorage.setItem("DECRYPTION_KEY", response.DATA.decryption_key);
+                } else {
+                    $("#error").html(response.MESSAGE);
+                    console.error("Error", response);
+                }
+				getTokenList();
+            });
+}
+
+function getTokenList(){
+	showLoader($("#tokenListResonse"));
+	getTokenListRequest(localStorage.getItem('SESSION_TOKEN')).then(function (data) {
+        console.log("Token List ==>>>"+data);  
+		$("#tokenListResonse").text(data);      
+		var response = JSON.parse(data);
+                if (response.SUCCESS === true) {
+                    user_tokens = response.DATA;
+                    localStorage.setItem("user_tokens", JSON.stringify(user_tokens));
+					if(user_tokens.length>0){
+						sessionStorage.setItem('current_token', user_tokens[0].TOKEN_ID);
+					}
+                }
+				getToken();
+            });
+}
+
+function getToken(){
+	showLoader($("#tokenResonse"));
+	const st = localStorage.getItem('SESSION_TOKEN');
+                const currentToken = sessionStorage.getItem('current_token');
+                getTokenRequest(currentToken, st).then(function (data) {
+                    console.log("Token Data==>" + data);
+					$("#tokenResonse").text(data);      
+					var response =  JSON.parse(data);
+                    tokenData = response.DATA;
+            });
+}
+
+</script>
+
+</body>
+</html>

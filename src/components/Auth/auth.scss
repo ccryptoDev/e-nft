@@ -1,0 +1,22 @@
+.create-account,
+.login-to-account {
+  .noError {
+    display: none;
+  }
+  .hasError {
+    display: block;
+    text-align: left;
+    margin-top: 5px; 
+    margin-left: 15px;
+    line-height: 1;
+    font-size: 14px;
+    color: darkred;
+  }
+  button {
+    border-radius: 77px;
+  }
+}
+.verify-form,
+.login-form {
+  margin: 3rem 0
+}

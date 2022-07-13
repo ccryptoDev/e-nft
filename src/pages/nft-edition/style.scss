@@ -1,0 +1,82 @@
+.block-market-item-details #main-container {
+  h1,
+  h2,
+  h4,
+  a,
+  span {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+  }
+  small {
+    font-size: 70%;
+    font-weight: 400;
+  }
+  .the-item {
+    .item-image {
+      margin-right: 5% !important;
+    }
+    .the-details {
+      .warning-text {
+        width: 100%;
+        color: red;
+      }
+      a {
+        color: #00a7e9;
+      }
+    }
+  }
+  .the-buttons {
+    .btn-content {
+      width: 100%;
+      text-align: center;
+      a {
+        color: #00a7e9;
+      }
+    }
+  }
+}
+.modal-open {
+  overflow: hidden;
+  .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+#buynow-modal {
+  display: block;
+  transition: all 0.3s linear;
+  &.fade:not(.show) {
+    visibility: hidden;
+    opacity: 0;
+  }
+  &.fade.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  .close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.5;
+    border: 0;
+    background-color: transparent;
+  }
+  .center-btns {
+    text-align: center;
+    button {
+      margin-bottom: 10px;
+    }
+  }
+}
+@media (max-width: 1299px) {
+  // .block-market-item-details #main-container .the-item .item-image {
+  //   margin-right: 5%;
+  // }
+}
+@media (max-width: 599px) {
+  .modal-content button {
+    height: 60px !important;
+  }
+}

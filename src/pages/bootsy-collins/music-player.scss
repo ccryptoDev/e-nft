@@ -1,0 +1,133 @@
+#music-player {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 55%;
+  height: auto;
+  border-radius: 10px;
+}
+.music-card {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  display: block;
+  padding: 20px;
+}
+.song-name {
+  margin: 0;
+  margin-bottom: -5px;
+  text-align: center;
+  color: #2e2b2b;
+}
+.player-image {
+  margin-bottom: 30px;
+  width: 50%;
+  height: auto;
+  border-radius: 25px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25) !important;
+  cursor: pointer;
+}
+.music-resume {
+  width: 100%;
+  height: 5px;
+  margin-top: 15px;
+  background-color: blue;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#progress-wrapper {
+  width: 100%;
+  height: 2px;
+  background-color: #aaa;
+  margin-top: 10px;
+  border-radius: 10px;
+  /* cursor: pointer; */
+}
+#progress {
+  width: 0%;
+  height: 5px;
+  background-color: #000;
+  position: relative;
+  top: -2px;
+}
+.play-btn {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+}
+.player-icon {
+  color: #000;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 10px 0 10px;
+  transition: all 75ms ease-in;
+}
+.player-icon:hover {
+  opacity: .5;
+}
+.play-icon-btn {
+  font-size: 45px;
+}
+#music-playlist, #music-playlist-karen {
+  text-align: left;
+  flex: 0 0 41%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-content: flex-start;
+  margin-top: 15px;
+  margin-top: 50px;
+  overflow-y: auto;
+  max-height: 600px;
+}
+.music-card-list {
+  margin: 10px;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  color: gray;
+  align-items: center;
+  padding-bottom: 10px;
+  transition: all 75ms ease-in;
+}
+.music-card-list:hover {
+  opacity: 0.8;
+}
+.music-image {
+  text-align: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 10px;
+}
+.singer-name {
+  color: #444;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  font-size:  14px;
+  margin: 0 0 0 10px;
+}
+.music-card .singer-name {
+  margin: 0;
+}
+.music-name {
+  font-size: 18px;
+  margin: 0 0 0 10px;
+}
+.music-details {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+#music-playlist::-webkit-scrollbar-track, #music-playlist-karen::-webkit-scrollbar-track {
+  background-color: lightgray;
+}
+
+#music-playlist::-webkit-scrollbar, #music-playlist-karen::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5;
+}
+
+#music-playlist::-webkit-scrollbar-thumb, #music-playlist-karen::-webkit-scrollbar-thumb {
+  background-color: #2e2b2b;
+  border: 2px solid #555555
+}

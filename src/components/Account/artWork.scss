@@ -1,0 +1,22 @@
+.account-artwork {
+  margin-top: 5rem;
+  width: 100%;
+
+  h3 {
+    color: #999;
+    strong {
+      color: #fff;
+    }
+  }
+  .artwork-wrapper {
+    width: 70%;
+    margin: 3rem auto 0;
+  }
+  .image-gallery-bullets {
+    display: none;
+  }
+  .image-gallery-thumbnails-wrapper {
+    width: 60%;
+    margin: 30px auto 0;
+  }
+}

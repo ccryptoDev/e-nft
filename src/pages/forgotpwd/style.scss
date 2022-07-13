@@ -1,0 +1,161 @@
+.tory-wrap {
+  background: url("../../assets/images/bg-tory.jpg") no-repeat top center #000;
+
+  background-size: cover;
+  background-size: 105%;
+  background-attachment: fixed;
+  .user-block {
+    padding: 0 30px;
+    margin: 100px auto;
+    max-width: 1500px;
+    max-width: 1000px;
+    display: block;
+  }
+  .block-login {
+    margin: 0 auto;
+    padding: 70px 0;
+    width: 100%;
+    .inner-message {
+      h1 {
+        color: #000;
+        font-size: 33px;
+        margin-bottom: 3px;
+        font-weight: 800;
+      }
+      &.message-login {
+        background: #fff;
+        min-height: 500px;
+        overflow: hidden;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+        .create-account {
+          background: #1ecefe;
+          background: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(#1ecefe),
+            to(#35f5c6)
+          );
+          background: linear-gradient(to right, #1ecefe, #35f5c6);
+          background-size: cover;
+          padding: 50px 40px;
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+        }
+        .login-to-account {
+          background-color: #ffffff;
+          padding: 40px;
+          padding-top: 120px;
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+        }
+      }
+      .checkbox-field {
+        width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        input {
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  .block-login {
+    .inner-message {
+      .create-account {
+        p span {
+          width: 250px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1299px) {
+  .tory-wrap .block-login {
+    max-width: 80%;
+    .inner-message.message-login {
+      button,
+      input,
+      textarea,
+      select {
+        width: 100%;
+      }
+      .checkbox-field {
+        input {
+          width: auto;
+          height: auto;
+        }
+      }
+      .create-account {
+        flex: 0 0 45%;
+      }
+      .login-to-account {
+        flex: 0 0 55%;
+      }
+    }
+  }
+}
+@media (max-width: 749px) {
+  .tory-wrap .block-login {
+    .inner-message.message-login {
+      flex-wrap: wrap;
+      .create-account {
+        background: #1ecefe;
+        background: linear-gradient(to right, #1ecefe, #35f5c6);
+        flex: 1 0 100%;
+        padding: 50px 30px;
+      }
+      .login-to-account {
+        flex: 1 0 100%;
+        padding: 50px 30px;
+      }
+    }
+  }
+}
+@media (max-width: 599px) {
+  .tory-wrap .block-login {
+    margin: 60px auto;
+    max-width: 85%;
+    .message-login .create-account {
+      padding: 30px;
+    }
+    .inner-message .checkbox-field.remember-box {
+      justify-content: center;
+    }
+  }
+}
+@media (max-width: 359px) {
+  .tory-wrap .block-login {
+    max-width: 95%;
+  }
+}

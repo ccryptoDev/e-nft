@@ -1,0 +1,65 @@
+.update-profile {
+  .content-block{
+    max-width: 400px;
+    padding: 0 20px;
+    text-align: center;
+
+    h2.update-title {
+      color: #000;
+      font-size: 33px;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+  }
+
+  .update-profile-form {
+    margin: 0 auto;
+    max-width: none;
+  }
+
+  input, button, select, optgroup, textarea {
+    font-size: 14px;
+    margin: 5px;
+
+    @media(max-width: 520px) {
+      margin: 10px 5px;
+    }
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin-top: 12px;
+  }
+
+  .noError {
+    display: none;
+  }
+  .hasError {
+    display: block;
+    text-align: left;
+    margin-left: 15px;
+    line-height: 1;
+    font-size: 14px;
+    color: darkred;
+    margin-bottom: 10px;
+  }
+
+  button.dark {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+.tory-wrap .block-login .inner-message.message-login.updateProfile {
+  display: block;
+
+  input {
+    width: 100%;
+  }
+}

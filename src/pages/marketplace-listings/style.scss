@@ -1,0 +1,195 @@
+.space-wrap {
+  background: url(../../assets/images/bg-nebula-fade.jpeg)
+    no-repeat top center fixed #170a2c;
+  background-size: cover;
+  .block-listings {
+    .nft-table-header {
+      select {
+        margin: 0;
+      }
+    }
+    .table-btn.active-btn {
+      color: #00a7e9;
+    }
+  }
+  .table-row.pagination-row {
+    .table-col {
+      display: initial !important;
+    }
+  }
+}
+@media (max-width: 1299px) {
+  .block-listings .nft-table-header .links-wrap {
+    flex-wrap: wrap;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    .the-links {
+      margin-right: 0;
+      flex: 1 0 100%;
+    }
+    .sort-by select {
+      margin-top: 15px;
+      height: 42px;
+      width: 180px;
+    }
+  }
+}
+@media (max-width: 999px) {
+  .block-listings .nft-table-header {
+    .the-listing .the-results {
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      span {
+        font-size: 14px;
+      }
+    }
+    .links-wrap .the-links ul a {
+      font-size: 16px;
+      padding: 17px 22px;
+    }
+  }
+  .block-listings {
+    .css-table {
+      display: block;
+      margin: 25px 5%;
+      width: 90% !important;
+      .table-row {
+        display: flex;
+        .table-col {
+          overflow: hidden;
+        }
+        .col-seller {
+          width: 30%;
+        }
+        .col-edition {
+          width: 28%;
+        }
+        .col-remaining {
+          width: 28%;
+        }
+        .col-buy {
+          width: 14%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 799px) {
+  .block-listings .nft-table-header {
+    .the-listing {
+      padding-bottom: 30px;
+      margin-bottom: 33px;
+      border-bottom: 1px solid #335;
+      flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+      .the-details {
+        margin-bottom: 30px;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+        flex: 1 0 100%;
+        .listing-image {
+          height: 150px;
+        }
+      }
+    }
+  }
+  .block-listings {
+    .listings-wrap {
+      .css-table {
+        display: block;
+        margin: 25px 5%;
+        width: 90% !important;
+        .table-row {
+          display: block;
+          border-radius: 14px;
+          overflow: hidden;
+          .table-col {
+            width: 100%;
+            display: flex;
+            border-radius: 0px !important;
+            .col-title {
+              width: 40%;
+            }
+            .col-info {
+              width: 60%;
+            }
+            &.col-seller {
+              padding-bottom: 0px;
+              img {
+                position: absolute;
+              }
+              .col-inner-seller {
+                display: flex;
+                width: 100%;
+                padding-left: 95px;
+              }
+            }
+            &.col-edition,
+            &.col-remaining,
+            &.col-buy {
+              padding: 5px 10px 5px 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 599px) {
+  .block-listings {
+    .listings-wrap {
+      .css-table {
+        .table-row {
+          .table-col {
+            &.col-seller {
+              .col-inner-seller {
+                padding-left: 65px;
+              }
+            }
+            &.col-edition,
+            &.col-remaining,
+            &.col-buy {
+              padding: 5px 10px 5px 70px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 419px) {
+  .block-listings {
+    .listings-wrap {
+      .css-table {
+        .table-row {
+          .table-col {
+            display: block;
+            &.col-seller {
+              .col-inner-seller {
+                display: block;
+              }
+            }
+          }
+          &.pagination-row {
+            display: inline-grid;
+            width: 100%;
+            .table-col {
+              padding: 5px 10px;
+              &.col-page {
+                text-align: center;
+              }
+              &.col-next-btn {
+                text-align: right;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
